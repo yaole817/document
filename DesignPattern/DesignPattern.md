@@ -227,7 +227,7 @@ Joe 公司做了一套相当成功的模拟鸭子的游戏：SimUDuck。游戏�
 
 
 
-![Duck](DesignPattern\Duck.png)
+![Duck](DesignPattern/Duck.png)
 
 quack()  所有的鸭子都有叫（quak()）的属性，也会游泳（swim()），所以在基类中负责处理这部分代码实现。
 
@@ -317,7 +317,7 @@ int main() {
 
 1、在超类中添加一个fly() 属性，这样就可以让鸭子具有一些fly()的特性，如下面的类图所示
 
-![fly](DesignPattern\fly.png)
+![fly](DesignPattern/fly.png)
 
 但是，这样所有的子类都会继承fly 的方法，让有些不会飞的鸭子也在屏幕上乱飞，比如小黄鸭之类的
 
@@ -325,7 +325,7 @@ int main() {
 
 3、使用接口实现，实现两个接口（c++ 中的纯虚类，所有的成员函数是由纯虚函数来实现的，子类必须实现父类的成员函数）。将fly() 和quack()  抽象成行为来实现，子类如果需要使用，需要自己实现自己的行为，如下图所示
 
-![interface](DesignPattern\interface.png)
+![interface](DesignPattern/interface.png)
 
 
 
@@ -363,11 +363,11 @@ animal->bark();
 
 #### 实现鸭子的行为
 
-![FlyBehavior](DesignPattern\FlyBehavior.png)
+![FlyBehavior](DesignPattern/FlyBehavior.png)
 
 
 
-![QuackBehavior](DesignPattern\QuackBehavior.png)
+![QuackBehavior](DesignPattern/QuackBehavior.png)
 
 这样的设计可以让飞行和呱呱叫的动作被其他对象复用，因为这些行为已经与鸭子类无关了。
 
@@ -381,7 +381,7 @@ animal->bark();
 
 首先，在Duck类中“加入两个实例变量”，分别为“flyBehavior” 与 “quackBehavior”， 声明为接口类型（而不是具体实现类型），每一类鸭子对象都会动态的设置这些变量以在运行时正确的引用正确的行为类型
 
-![DuckUML](DesignPattern\DuckUML.png)
+![DuckUML](DesignPattern/DuckUML.png)
 
 DucK 类
 
@@ -662,7 +662,7 @@ Starbuzz 是一个以扩张速度最快而闻名的咖啡连锁店。因为扩�
 
 原先的设计是这样的
 
-![Starbuzz](DesignPattern\Starbuzz.png)
+![Starbuzz](DesignPattern/Starbuzz.png)
 
 
 
@@ -694,13 +694,13 @@ Starbuzz 是一个以扩张速度最快而闻名的咖啡连锁店。因为扩�
 3 如果顾客也想要奶泡了，所以需要建立一个Whip装饰者，并用它将Mocha对象包起来。
 
 
-![DarkRoast](DesignPattern\DarkRoast.png)
+![DarkRoast](DesignPattern/DarkRoast.png)
 
 
 
 4 最后，给顾客算钱的时候，通过最外圈的装饰者的cost() 就可以办得到。whip的cost() 先委托它的装饰的对象（也就是mocha）计算出价钱，然后再加上奶泡的价格。以此类推出最后的结果。
 
-![StarbuzzDecorate](DesignPattern\StarbuzzDecorate.png)
+![StarbuzzDecorate](DesignPattern/StarbuzzDecorate.png)
 
 ### 定义
 
@@ -718,7 +718,7 @@ Starbuzz 是一个以扩张速度最快而闻名的咖啡连锁店。因为扩�
 
 
 
-![Beverage](DesignPattern\Beverage.png)
+![Beverage](DesignPattern/Beverage.png)
 
 ### 设计原则
 
